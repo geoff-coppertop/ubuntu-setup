@@ -1,0 +1,36 @@
+[core]
+	hooksPath = C:/Users/thomasg/.git/hooks/
+	longpaths = true
+	whitespace = cr-at-eol,tab-in-indent
+	autocrlf = true
+[mergetool "bc4"]
+	cmd = \"C:/Program Files/Beyond Compare 4/BComp.exe\" -solo \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[merge]
+	tool = bc4
+[difftool "bc4"]
+	cmd = \"C:/Program Files/Beyond Compare 4/BComp.exe\" -solo \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = bc4
+	guitool = bc4
+[commit]
+	template = C:/Users/thomasg/.git/templates/csp-brief-template.txt
+[color]  
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[difftool]
+	prompt = false
+[user]
+	name = Geoffrey Thomas
+	email = geoffrey.thomas@garmin.com
+[alias]
+	st  = status
+	dft = difftool
+	met = mergetool
+	pug = "!p() { git push origin HEAD:refs/for/$1; }; p"
+	sfn = "submodule foreach git clean -xffdn"
+	sfc = "submodule foreach git clean -xffd"
+	upd = "submodule update --recursive --init"
+	lnc = log --pretty=format:"%h\\ %s"
+	amd = commit --amend
