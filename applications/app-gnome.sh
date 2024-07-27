@@ -1,7 +1,7 @@
 # Desktop software and tweaks will only be installed if we're running Gnome
 RUNNING_GNOME=$([[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]] && echo true || echo false)
 
-if ! $RUNNING_GNOME; then
+if [ ! $RUNNING_GNOME]; then
 	exit 0
 fi
 
@@ -19,7 +19,7 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru-$THEME_COLOR-dark"
 gsettings set org.gnome.desktop.interface icon-theme "Yaru-$THEME_COLOR"
 
-BACKGROUND_ORG_PATH="$CONFIG_PATH/gnome/background.jpg"
+BACKGROUND_ORG_PATH="$CONFIG_PATH/gnome/f18-silhouette.jpg"
 BACKGROUND_DEST_DIR="$HOME/.local/share/backgrounds"
 BACKGROUND_DEST_PATH="$BACKGROUND_DEST_DIR/background.jpg"
 
@@ -115,15 +115,16 @@ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folder
 
 # Favorite apps for dock
 apps=(
-	"Alacritty.desktop"
-	"code.desktop"
-	"signal-desktop.desktop"
-	"steam.desktop"
-	"md.obsidian.Obsidian.desktop"
-	"Activity.desktop"
-	"Docker.desktop"
-	"org.gnome.Settings.desktop"
-	"org.gnome.Nautilus.desktop"
+  "firefox.desktop"
+  "Alacritty.desktop"
+  "code.desktop"
+  "org.signal.Signal.desktop"
+  "steam.desktop"
+  "md.obsidian.Obsidian.desktop"
+  "Activity.desktop"
+  "Docker.desktop"
+  "org.gnome.Settings.desktop"
+  "org.gnome.Nautilus.desktop"
 )
 
 # Array to hold installed favorite apps
