@@ -1,8 +1,8 @@
 cp $CONFIG_PATH/git/gitconfig $HOME/.gitconfig
 
-mkdir -p $HOME/.git
+mkdir -p $HOME/.git/templates/
 
-cp $CONFIG_PATH/git/commit-template.txt $HOME/.git/templates/commmit-template.txt
+cp $CONFIG_PATH/git/commit-template.txt $HOME/.git/templates/commit-template.txt
 
 # Lazygit
 cd /tmp
@@ -19,7 +19,7 @@ cd /tmp
 wget -O git-lfs.tar.gz https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-linux-amd64-v3.5.1.tar.gz
 tar -xf git-lfs.tar.gz
 sudo git-lfs-*/install.sh
-rm git-lfs.tar.gz git-lfs-*/
+rm -rf git-lfs.tar.gz git-lfs-*/
 
 cd -
 

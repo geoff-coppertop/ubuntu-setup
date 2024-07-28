@@ -22,7 +22,7 @@
 [core]
 	longpaths = true
 	whitespace = cr-at-eol,tab-in-indent
-	autocrlf = true
+	autocrlf = input
 
 [init]
   templateDir = ~/.git/

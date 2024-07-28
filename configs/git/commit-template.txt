@@ -13,9 +13,7 @@
 #  1.
 #
 ## --------------------- (72 character ruler) -------------------------|
-#CoverityIssue:
 #Issue:
-#QCIssue:
 #Type: Bug Fix
 #Type: Optimization
 #Type: New Feature
