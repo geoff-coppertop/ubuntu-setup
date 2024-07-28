@@ -2,7 +2,6 @@
 sudo rm -rf /usr/local/share/applications/nvim.desktop
 sudo rm -rf /usr/local/share/applications/vim.desktop
 
-
 cd /tmp
 wget -O nvim.tar.gz "https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz"
 tar -xf nvim.tar.gz
