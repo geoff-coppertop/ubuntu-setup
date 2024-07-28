@@ -115,7 +115,7 @@ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folder
 
 # Favorite apps for dock
 apps=(
-  "firefox.desktop"
+  "org.mozilla.firefox.desktop"
   "Alacritty.desktop"
   "code.desktop"
   "org.signal.Signal.desktop"
