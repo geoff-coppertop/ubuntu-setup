@@ -6,7 +6,7 @@ rm frameworkd.deb
 
 wget -O frameworkctl.zip 'https://stefanhoelzl.github.io/frameworkd/frameworkctl@stefanhoelzl.shell-extension.zip'
 mkdir -p ~/.local/share/gnome-shell/extensions/frameworkctl@stefanhoelzl
-unzip frameworkctl.zip -d ~/.local/share/gnome-shell/extensions/frameworkctl@stefanhoelzl
+unzip -o frameworkctl.zip -d ~/.local/share/gnome-shell/extensions/frameworkctl@stefanhoelzl
 gnome-extensions enable frameworkctl@stefanhoelzl
 
 cd -
