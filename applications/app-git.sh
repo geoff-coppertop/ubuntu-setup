@@ -28,3 +28,18 @@ git lfs install
 # Pre-commit
 pip install pre-commit
 pre-commit init-templatedir ~/.git/
+
+# git credential manager
+cd /tmp
+
+wget -O gcm-install.sh https://aka.ms/gcm/linux-install-source.sh
+chmod +x gcm-install.sh
+./gcm-install.sh
+git-credential-manager configure
+
+cd -
+
+# https://gist.github.com/maelvls/79d49740ce9208c26d6a1b10b0d95b5e
+# https://askubuntu.com/a/1469736
+# https://github.com/hickford/git-credential-oauth
+sudo apt-get install git-credential-oauth
