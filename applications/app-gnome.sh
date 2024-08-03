@@ -13,11 +13,37 @@ sudo apt-get install -y \
   pipx
 
 THEME_COLOR="blue"
+THEME_NAME="Yaru-$THEME_COLOR-dark"
 
+# https://github.com/GNOME/gsettings-desktop-schemas/blob/master/schemas/org.gnome.desktop.interface.gschema.xml.in
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
-gsettings set org.gnome.desktop.interface gtk-theme "Yaru-$THEME_COLOR-dark"
-gsettings set org.gnome.desktop.interface icon-theme "Yaru-$THEME_COLOR"
+gsettings set org.gnome.desktop.interface gtk-theme "$THEME_NAME"
+gsettings set org.gnome.desktop.interface icon-theme "$THEME_NAME"
+gsettings set org.gnome.desktop.interface cursor-blink true
+gsettings set org.gnome.desktop.interface cursor-blink-time 1200
+
+mkdir $HOME/.themes
+mkdir $HOME/.icons
+
+cp -r /usr/share/themes/$THEME_NAME/ $HOME/.themes
+cp -r /usr/share/icons/$THEME_NAME/ $HOME/.icons
+
+sudo flatpak override --filesystem=$HOME/.themes
+sudo flatpak override --filesystem=$HOME/.icons
+sudo flatpak override --env=GTK_THEME=$THEME_NAME
+sudo flatpak override --env=ICON_THEME=$THEME_NAME
+
+# Add rejection of bouncing keys
+# https://github.com/GNOME/gsettings-desktop-schemas/blob/master/schemas/org.gnome.desktop.a11y.keyboard.gschema.xml.in
+gsettings set org.gnome.desktop.a11y.keyboard bouncekeys-enable true
+gsettings set org.gnome.desktop.a11y.keyboard bouncekeys-delay 60
+gsettings set org.gnome.desktop.a11y.keyboard bouncekeys-beep-reject true
+
+# https://github.com/GNOME/gsettings-desktop-schemas/blob/master/schemas/org.gnome.desktop.peripherals.gschema.xml.in
+gsettings set org.gnome.desktop.peripherals.keyboard repeat true
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 30
+gsettings set org.gnome.desktop.peripherals.keyboard delay 500
 
 BACKGROUND_ORG_PATH="$CONFIG_PATH/gnome/f18-silhouette.jpg"
 BACKGROUND_DEST_DIR="$HOME/.local/share/backgrounds"
