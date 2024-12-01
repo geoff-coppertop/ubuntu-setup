@@ -23,8 +23,8 @@ export APPLICATIONS_PATH="$SOURCE_PATH/applications"
 export CLEANUP_PATH="$SOURCE_PATH/cleanup"
 
 echo "Cloning stable ubuntu-setup..."
-rm -rf $SOURCE_PATH
-git clone -b stable https://github.com/geoff-coppertop/ubuntu-setup.git $SOURCE_PATH >/dev/null
+# rm -rf $SOURCE_PATH
+# git clone -b stable https://github.com/geoff-coppertop/ubuntu-setup.git $SOURCE_PATH >/dev/null
 
 echo "Installation starting..."
 

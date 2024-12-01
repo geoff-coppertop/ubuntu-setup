@@ -10,7 +10,9 @@ sudo apt-get install -y \
   gnome-sushi \
   gnome-tweak-tool \
   gnome-shell-extension-manager \
-  pipx
+  pipx \
+  gir1.2-gtop-2.0 \
+  lm-sensors
 
 THEME_COLOR="blue"
 THEME_NAME="Yaru-$THEME_COLOR-dark"
